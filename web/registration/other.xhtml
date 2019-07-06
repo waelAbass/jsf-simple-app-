@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
+        <ui:define name="header">
+          #{b['def.regprocss']}
+        </ui:define>
+        
+        <ui:define name="content">
+            <h:form>
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="#{b['user.email']}"/>
+                    <h:inputText id="email" value="#{flowScope.email}"
+                                 required="true"
+                                 requiredMessage="#{b['validate.email']}"/>
+                    <h:message for="email" styleClass="error"/>
+                   
+                    <h:outputLabel value="#{b['user.locatio']}"/>
+                    <h:inputText id="location" value="#{flowScope.location}"
+                                 required="true"
+                                 requiredMessage="#{b['validate.location']}"/>
+                    <h:message for="location" styleClass="error"/>
+                    
+                </h:panelGrid>
+                <h:commandButton class="btns" value="#{b['def.next']}" action="confirm" />
+                <h:commandButton class="btns" value="#{b['def.back']}" action="registration" immediate="true"/>
+                <h:commandButton class="btns" value="#{b['def.cancel']}" action="regOut" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

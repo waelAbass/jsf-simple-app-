@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
+        <ui:define name="header">
+            #{b['def.regprocss']}
+        </ui:define>
+
+        <ui:define name="content">
+            <center>  <h2>Verify Information</h2></center>
+            <h:form id="reg-form">
+                <h:panelGrid columns="1">
+                    <h:outputLabel value="#{flowScope.fullname}"/> 
+                    <h:outputLabel value="#{flowScope.pwd}"/>
+                    <h:outputLabel value="#{flowScope.location}"/>
+                    <h:messages/>
+                </h:panelGrid>
+                <h:commandButton class="btns" value="#{b['def.next']}" action="other" />
+                <h:commandButton class="btns" value="#{b['def.finish']}" action="#{registrationBacking.registerUser()}" immediate="true"/>
+                <h:commandButton class="btns" value="#{b['def.cancel']}" action="regOut" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

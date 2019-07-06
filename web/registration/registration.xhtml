@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
+        <ui:define name="css">
+            <h:outputStylesheet name="reg.css" library="css"/>
+        </ui:define>
+        
+        <ui:define name="header">
+          #{b['def.regprocss']}
+        </ui:define>
+        
+        <ui:define name="content">
+            <h:form id="reg-form">
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="#{b['user.fullname']}"/>
+                    <h:inputText id="fullname" value="#{flowScope.fullname}"
+                                 required="true"
+                                 requiredMessage="#{b['validate.fullname']}"/>
+                    <h:message for="fullname" styleClass="error"/>
+                    <h:outputLabel value="#{b['user.pwd']}"/>
+                    <h:inputSecret id="pwd" value="#{flowScope.pwd}"
+                                 required="true"
+                                 requiredMessage="#{b['validate.pwd']}"/>
+                    <h:message for="pwd" styleClass="error"/>
+                    <h:outputLabel value="#{b['user.confirm']}"/>
+                    <h:inputSecret id="confirm" value="#{flowScope.confirm}"
+                                 required="true"
+                                 requiredMessage="#{b['validate.pwdconfirm']}"/>
+                    <h:message for="pwd" styleClass="error"/>
+                </h:panelGrid>
+                <h:commandButton class="btns" value="#{b['def.next']}" action="other" />
+                <h:commandButton class="btns" value="#{b['def.cancel']}" action="regOut" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

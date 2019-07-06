@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 25, 2019, 7:39:45 PM
+    Author     : AFAQE3
+*/
+#login-form{
+    width: 45vw;
+    min-height: 20vh;
+    padding: 35px 20px 30px 20px;
+    background: #ff0033;
+    color: #ffffff;
+    border-radius: 7px;
+     margin: 200px auto;
+}
+#login-form input[type="submit"]{
+    background: white;
+    border: none;
+    padding: 5px 50px 5px 50px;
+    color: #ff6666;
+    border-radius: 3px;
+    float: right; 
+   
+}
+#login-form input[type="text"],#login-form input[type="password"]{
+    width: 505px;
+    border-radius: 3px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    text-indent: 35px;
+}
+#reg-link{
+    float: right;
+    color: white;
+    text-shadow: 0 -1px 0px black;
+    text-decoration: none;
+}
